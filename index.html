@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serene Homestay | Farmstay Near Badami, Karnataka</title>
+<meta name="description" content="A farmland homestay in Hirenasabi, near Badami. Rooms with attached bathrooms, bonfire evenings, and easy reach of the Badami Caves, Pattadakal & Aihole. Book directly or via Booking.com, Agoda & Wego.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBF8F2;
+    --card:#FFFFFF;
+    --ink:#2E2A22;
+    --ink-soft:#726B5C;
+    --accent:#2C7873;
+    --accent-dark:#1F5C58;
+    --accent-soft:#DCEEEC;
+    --line:rgba(46,42,34,0.12);
+    --radius:8px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:'Inter',sans-serif; font-size:16px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  h1,h2,h3{font-family:'Fraunces',serif; font-weight:600; line-height:1.15;}
+  em{font-style:italic; color:var(--accent);}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 6vw;}
+  section{padding:5.5rem 0;}
+  @media(max-width:700px){ section{padding:3.5rem 0;} }
+  .section-tag{
+    display:inline-block; font-size:0.82rem; font-weight:600; color:var(--accent);
+    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.6rem;
+  }
+  .section-title{font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:1rem;}
+  .section-sub{color:var(--ink-soft); max-width:52ch; font-size:1rem;}
+  .btn{
+    display:inline-flex; align-items:center; gap:0.5em;
+    font-weight:600; font-size:0.94rem; padding:0.85rem 1.5rem;
+    border-radius:var(--radius); transition:all .2s ease; border:1px solid transparent;
+  }
+  .btn-solid{background:var(--accent); color:#fff;}
+  .btn-solid:hover{background:var(--accent-dark);}
+  .btn-line{border-color:var(--ink); color:var(--ink);}
+  .btn-line:hover{background:var(--ink); color:#fff;}
+
+  /* NAV */
+  header{position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(251,248,242,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .nav{max-width:1160px; margin:0 auto; padding:0 6vw; height:72px; display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:0.6rem; font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem;}
+  .brand img{width:32px; height:32px; border-radius:50%; object-fit:cover;}
+  .navlinks{display:flex; gap:1.9rem; font-size:0.92rem; font-weight:500;}
+  .navlinks a:hover{color:var(--accent);}
+  .navcta{background:var(--accent); color:#fff; padding:0.6rem 1.15rem; border-radius:var(--radius); font-size:0.88rem; font-weight:600;}
+  .navcta:hover{background:var(--accent-dark);}
+  .navtoggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer;}
+  .navtoggle span{width:22px; height:2px; background:var(--ink);}
+  @media(max-width:840px){ .navlinks{display:none;} .navcta{display:none;} .navtoggle{display:flex;} }
+  .mobilenav{display:none; flex-direction:column; position:fixed; top:72px; left:0; right:0; background:var(--bg); border-bottom:1px solid var(--line); padding:1.4rem 6vw; gap:1rem; z-index:99;}
+  .mobilenav.open{display:flex;}
+
+  /* HERO */
+  /* GALLERY MARQUEE */
+  .gallery-section{overflow:hidden; padding:5rem 0;}
+  .marquee-row{display:flex; overflow:hidden; margin-bottom:0.6rem; -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);}
+  .marquee-track{display:flex; gap:0.6rem; flex-shrink:0; animation:scrollLeft 55s linear infinite;}
+  .marquee-row.reverse .marquee-track{animation:scrollRight 55s linear infinite;}
+  .marquee-track img{height:220px; width:300px; object-fit:cover; border-radius:var(--radius); flex-shrink:0;}
+  .marquee-row:hover .marquee-track{animation-play-state:paused;}
+  @keyframes scrollLeft{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  @keyframes scrollRight{ from{transform:translateX(-50%);} to{transform:translateX(0);} }
+  @media(max-width:700px){ .marquee-track img{height:150px; width:200px;} }
+  @media (prefers-reduced-motion: reduce){ .marquee-track{animation:none;} }
+
+  .hero{padding-top:130px; padding-bottom:3rem; text-align:center;}
+  .hero-brand{
+    display:flex; align-items:center; justify-content:center; gap:0.9rem;
+    margin-bottom:1.6rem;
+  }
+  .hero-brand img{
+    width:76px; height:76px; border-radius:50%; object-fit:cover;
+    border:2px solid var(--accent-soft); box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  }
+  .hero-brand span{
+    font-family:'Fraunces',serif; font-weight:600; font-size:2.8rem; color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+  @media(max-width:560px){
+    .hero-brand img{width:50px; height:50px;}
+    .hero-brand span{font-size:2.1rem;}
+  }
+  .hero-badge{
+    display:inline-flex; align-items:center; gap:0.4em; background:var(--accent-soft); color:var(--accent-dark);
+    font-size:0.82rem; font-weight:600; padding:0.5rem 1rem; border-radius:30px; margin-bottom:1.6rem;
+  }
+  .hero h1{font-size:clamp(1.5rem,2.6vw,2rem); font-weight:500; max-width:16ch; margin:0 auto 1.2rem;}
+  .hero-sub{max-width:46ch; margin:0 auto 2rem; color:var(--ink-soft); font-size:1.08rem;}
+  .hero-actions{display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.8rem;}
+  .hero-pills{display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:3rem;}
+  .pill{
+    display:flex; align-items:center; gap:0.5em; background:var(--card); border:1px solid var(--line);
+    padding:0.7rem 1.2rem; border-radius:30px; font-size:0.88rem; font-weight:500;
+  }
+  .hero-gallery{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:0.6rem; max-width:1100px; margin:0 auto;}
+  .hero-gallery img{width:100%; height:340px; object-fit:cover; border-radius:var(--radius);}
+  .hero-gallery .stack{display:grid; grid-template-rows:1fr 1fr; gap:0.6rem;}
+  .hero-gallery .stack img{height:167px;}
+  .room-slideshow{position:relative; width:100%; height:167px; border-radius:var(--radius); overflow:hidden;}
+  .room-slideshow img{
+    position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;
+    opacity:0; transition:opacity 1s ease; border-radius:0;
+  }
+  .room-slideshow img.active{opacity:1;}
+  @media(max-width:800px){
+    .hero-gallery{grid-template-columns:1fr;}
+    .hero-gallery img{height:220px;}
+    .hero-gallery .stack{grid-template-columns:1fr 1fr; grid-template-rows:none;}
+    .hero-gallery .stack img{height:150px;}
+    .room-slideshow{height:150px;}
+  }
+
+  /* ABOUT */
+  .about-box{
+    display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:4rem;
+  }
+  .about-copy p{color:var(--ink-soft); margin-bottom:1.1rem; max-width:50ch;}
+  .stat-row{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.4rem 0;}
+  .stat-row div{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:0.9rem 1rem; text-align:center;}
+  .stat-row div span{display:block; font-family:'Fraunces',serif; font-size:1.7rem; font-weight:600; color:var(--accent);}
+  .stat-row div small{font-size:0.76rem; color:var(--ink-soft);}
+  .quote{
+    border-left:3px solid var(--accent); padding-left:1.2rem; font-family:'Fraunces',serif;
+    font-style:italic; font-size:1.15rem; color:var(--ink); margin:1.8rem 0 0; max-width:44ch;
+  }
+  .about-tags{display:flex; gap:1rem; flex-wrap:wrap;}
+  .about-img img{width:100%; border-radius:var(--radius); display:block;}
+  @media(max-width:900px){
+    .about-box{grid-template-columns:1fr; gap:2.5rem;}
+    .stat-row{gap:0.8rem;}
+  }
+
+  /* ROOMS */
+  .rooms{background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .rooms-head{text-align:center; max-width:44ch; margin:0 auto 3rem;}
+  .room-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1.6rem;}
+  .room-card{border:1px solid var(--line); border-radius:var(--radius); padding:1.9rem; position:relative; background:var(--bg);}
+  .room-badge{
+    position:absolute; top:-12px; left:1.6rem; background:var(--accent); color:#fff;
+    font-size:0.72rem; font-weight:600; padding:0.3rem 0.8rem; border-radius:20px;
+  }
+  .room-card h3{font-size:1.3rem; margin-bottom:0.9rem;}
+  .room-card ul{list-style:none; margin-bottom:1.4rem;}
+  .room-card li{font-size:0.9rem; color:var(--ink-soft); padding:0.4rem 0; border-bottom:1px dashed var(--line); display:flex; gap:0.5em;}
+  .room-card li:last-child{border-bottom:none;}
+  .room-card li::before{content:"—"; color:var(--accent);}
+  .book-via{font-size:0.76rem; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); margin-bottom:0.6rem;}
+  .book-links{display:flex; gap:0.6rem; flex-wrap:wrap;}
+  .book-links a{
+    font-size:0.82rem; font-weight:700; color:#fff; padding:0.5rem 0.9rem;
+    border-radius:20px; transition:filter .2s ease, transform .2s ease;
+  }
+  .book-links a:hover{filter:brightness(0.9); transform:translateY(-1px);}
+  .book-links a.wa{background:#25D366;}
+  .book-links a.bkg{background:#003580;}
+  .book-links a.agoda{background:#EB2026;}
+  .book-links a.wego{background:#F36F21;}
+  @media(max-width:800px){ .room-grid{grid-template-columns:1fr;} }
+  .pricing-line{text-align:center; margin-top:2.6rem; color:var(--ink-soft); font-size:0.94rem;}
+  .pricing-line strong{color:var(--ink);}
+
+  /* FACILITIES */
+  .facilities-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1.4rem;}
+  .facility{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.8rem 1.5rem; text-align:center;}
+  .facility svg{width:28px; height:28px; stroke:var(--accent); margin:0 auto 0.9rem;}
+  .facility h3{font-size:1rem; margin-bottom:0.4rem;}
+  .facility p{font-size:0.84rem; color:var(--ink-soft);}
+  @media(max-width:900px){ .facilities-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:520px){ .facilities-grid{grid-template-columns:1fr;} }
+
+  /* LOCATION */
+  .location{background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .location-inner{display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;}
+  .location-inner h2{text-align:left;}
+  .location-map{border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);}
+  .location-map iframe{width:100%; height:340px; border:0;}
+  .attraction-list{display:flex; flex-direction:column; gap:1.1rem; margin-top:1.6rem;}
+  .attraction{display:flex; align-items:flex-start; gap:1rem; padding-bottom:1.1rem; border-bottom:1px solid var(--line);}
+  .attraction:last-child{border-bottom:none; padding-bottom:0;}
+  .attraction-icon{font-size:1.3rem; line-height:1;}
+  .attraction h4{font-size:0.98rem; margin-bottom:0.15rem;}
+  .attraction small{color:var(--accent); font-weight:600; font-size:0.82rem;}
+  .attraction p{font-size:0.85rem; color:var(--ink-soft); margin-top:0.15rem;}
+  @media(max-width:900px){ .location-inner{grid-template-columns:1fr;} }
+
+  /* REVIEWS */
+  .google-reviews-card{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:2rem 2.4rem; max-width:760px; margin:0 auto;
+  }
+  .grc-left{display:flex; align-items:center; gap:1.1rem;}
+  .grc-rating{font-family:'Fraunces',serif; font-weight:600; font-size:1.7rem; display:flex; align-items:center; gap:0.5rem;}
+  .grc-stars{color:#FFC107; font-size:1.05rem; letter-spacing:0.05em;}
+  .grc-sub{font-size:0.84rem; color:var(--ink-soft); margin-top:0.15rem;}
+  .grc-btn{background:var(--accent); color:#fff; font-weight:700; font-size:0.9rem; padding:0.8rem 1.4rem; border-radius:var(--radius); transition:background .2s ease;}
+  .grc-btn:hover{background:var(--accent-dark);}
+  @media(max-width:560px){ .google-reviews-card{padding:1.6rem; justify-content:center; text-align:center;} .grc-left{flex-direction:column;} }
+
+  .review-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-top:1.8rem;}
+  .review-article{border:2px solid var(--line); border-radius:12px; background:var(--card); overflow:hidden;}
+  .review-article-body{display:flex; align-items:flex-start; gap:1rem; padding:1.5rem;}
+  .review-avatar{
+    width:48px; height:48px; border-radius:10px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--accent-soft); color:var(--accent-dark);
+    font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem;
+  }
+  .review-article h3{font-size:1.02rem; font-weight:600; margin-bottom:0.35rem;}
+  .review-article h3 a:hover{text-decoration:underline;}
+  .review-article p.rtext{
+    font-size:0.87rem; color:var(--ink-soft); display:-webkit-box;
+    -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; margin-bottom:0.7rem;
+  }
+  .review-meta{display:flex; align-items:center; gap:0.4rem; color:#FFC107; font-size:0.85rem;}
+  .review-meta small{color:var(--ink-soft); font-size:0.76rem; margin-left:0.3rem;}
+  .review-badge-row{display:flex; justify-content:flex-end;}
+  .review-badge{
+    display:inline-flex; align-items:center; gap:0.4rem;
+    background:var(--accent); color:#fff; padding:0.4rem 0.85rem;
+    border-radius:12px 0 12px 0; font-size:0.72rem; font-weight:600;
+  }
+  .review-badge svg{width:14px; height:14px;}
+  @media(max-width:900px){ .review-cards{grid-template-columns:1fr;} }
+
+  /* FAQ */
+  .faq{max-width:760px; margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    padding:1.3rem 0; display:flex; justify-content:space-between; align-items:center;
+    font-family:'Fraunces',serif; font-size:1.05rem; font-weight:500; color:var(--ink);
+  }
+  .faq-q span.icon{transition:transform .2s ease; color:var(--accent); font-size:1.2rem;}
+  .faq-item.open .faq-q span.icon{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  .faq-a p{padding-bottom:1.3rem; color:var(--ink-soft); font-size:0.94rem; max-width:60ch;}
+
+  /* CONTACT */
+  .contact{background:var(--card); border-top:1px solid var(--line);}
+  .contact-inner{display:grid; grid-template-columns:1fr 1fr; gap:4rem;}
+  .contact-info{display:flex; flex-direction:column; gap:1.3rem;}
+  .contact-row{display:flex; gap:1rem; align-items:flex-start;}
+  .contact-row svg{width:20px; height:20px; stroke:var(--accent); flex-shrink:0; margin-top:2px;}
+  .contact-row h4{font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-soft); margin-bottom:0.2rem;}
+  .contact-row a, .contact-row span{font-size:0.98rem; font-weight:500;}
+  .platform-row{display:flex; gap:0.7rem; flex-wrap:wrap; margin-top:0.5rem;}
+  .platform-row a{
+    color:#fff; border-radius:20px; padding:0.65rem 1.15rem; font-size:0.86rem; font-weight:700;
+    transition:filter .2s ease, transform .2s ease;
+  }
+  .platform-row a:hover{filter:brightness(0.9); transform:translateY(-1px);}
+  .platform-row a.wa{background:#25D366;}
+  .platform-row a.bkg{background:#003580;}
+  .platform-row a.agoda{background:#EB2026;}
+  .platform-row a.wego{background:#F36F21;}
+  form{display:flex; flex-direction:column; gap:1rem;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:1rem;}
+  label{font-size:0.78rem; font-weight:600; color:var(--ink-soft); margin-bottom:0.3rem; display:block;}
+  input, select, textarea{
+    width:100%; background:var(--bg); border:1px solid var(--line); border-radius:var(--radius);
+    padding:0.8rem 1rem; font-family:'Inter',sans-serif; font-size:0.94rem; color:var(--ink);
+  }
+  input:focus, select:focus, textarea:focus{outline:2px solid var(--accent); outline-offset:1px;}
+  textarea{resize:vertical; min-height:90px;}
+  @media(max-width:900px){ .contact-inner{grid-template-columns:1fr; gap:2.5rem;} }
+  @media(max-width:560px){ .form-row{grid-template-columns:1fr;} }
+
+  footer{padding:2.6rem 0; text-align:center; color:var(--ink-soft); font-size:0.86rem;}
+  footer .brand{justify-content:center; margin-bottom:0.8rem;}
+  footer .foot-links{display:flex; gap:1.4rem; justify-content:center; margin-bottom:0.8rem; flex-wrap:wrap;}
+
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{transition:none !important;} }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand"><img src="logo.jpg" alt="Serene Homestay logo"><span style="color:var(--accent);">Serene</span>&nbsp;Homestay</a>
+    <div class="navlinks">
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#location">Location</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="navcta" href="#contact">Book Now</a>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobilenav" id="mobilenav">
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#facilities">Facilities</a>
+    <a href="#location">Location</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<div id="top" class="hero">
+  <div class="wrap">
+    <div class="hero-brand">
+      <img src="logo.jpg" alt="Serene Homestay logo">
+      <span><span style="color:var(--accent);">Serene</span> Homestay</span>
+    </div>
+    <span class="hero-badge">★ Hirenasabi, Badami, Karnataka</span>
+    <h1>Slow Mornings &amp; <em>Farm Charm</em></h1>
+    <p class="hero-sub">Serene Homestay blends easy farmland living with genuine Karnataka hospitality. Open fields, bonfire evenings, and the Badami Caves just down the road.</p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="#rooms">Explore Rooms</a>
+      <a class="btn btn-line" href="#contact">Contact Us</a>
+    </div>
+    <div class="hero-pills">
+      <span class="pill">🌾 Farm Living</span>
+      <span class="pill">🔥 Bonfire Evenings</span>
+      <span class="pill">🐾 Pet Friendly</span>
+      <span class="pill">⭐ Top Rated</span>
+    </div>
+    <div class="hero-gallery">
+      <img src="outsidephotos/12.jpg" alt="Serene Homestay farmland">
+      <img src="outsidephotos/23.jpg" alt="Farm grounds at Serene Homestay">
+      <div class="stack">
+        <div class="room-slideshow" id="roomSlideshow">
+          <img class="active" src="roomphoto/101.jpg" alt="Room 1 at Serene Homestay">
+          <img src="roomphoto/102.jpg" alt="Room 2 at Serene Homestay">
+          <img src="roomphoto/103.jpg" alt="Room 3 at Serene Homestay">
+          <img src="roomphoto/104.jpg" alt="Room 4 at Serene Homestay">
+          <img src="roomphoto/105.jpeg" alt="Room 5 at Serene Homestay">
+        </div>
+        <img src="outsidephotos/45.jpg" alt="Evening at Serene Homestay">
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="gallery-section" id="gallery">
+  <div class="wrap" style="text-align:center; margin-bottom:2.6rem;">
+    <span class="section-tag">Moments at Serene</span>
+    <h2 class="section-title">A Look Around the Farm</h2>
+  </div>
+  <div class="marquee-row">
+    <div class="marquee-track">
+      <img src="outsidephotos/12.jpg" alt="Serene Homestay farmland">
+      <img src="outsidephotos/14.png" alt="Serene Homestay outdoors">
+      <img src="outsidephotos/23.jpg" alt="Farm view at Serene Homestay">
+      <img src="outsidephotos/37.jpg" alt="Serene Homestay grounds">
+      <img src="outsidephotos/44.jpg" alt="Serene Homestay farmland view">
+      <img src="outsidephotos/45.jpg" alt="Evening at Serene Homestay">
+      <img src="outsidephotos/50.jpg" alt="Farm path at Serene Homestay">
+      <img src="outsidephotos/46.jpg" alt="Serene Homestay farm grounds">
+      <img src="outsidephotos/70.jpeg" alt="Serene Homestay evening view">
+      <img src="outsidephotos/69.jpeg" alt="Serene Homestay farmland">
+      <!-- duplicate set for seamless loop -->
+      <img src="outsidephotos/12.jpg" alt="Serene Homestay farmland">
+      <img src="outsidephotos/14.png" alt="Serene Homestay outdoors">
+      <img src="outsidephotos/23.jpg" alt="Farm view at Serene Homestay">
+      <img src="outsidephotos/37.jpg" alt="Serene Homestay grounds">
+      <img src="outsidephotos/44.jpg" alt="Serene Homestay farmland view">
+      <img src="outsidephotos/45.jpg" alt="Evening at Serene Homestay">
+      <img src="outsidephotos/50.jpg" alt="Farm path at Serene Homestay">
+      <img src="outsidephotos/46.jpg" alt="Serene Homestay farm grounds">
+      <img src="outsidephotos/70.jpeg" alt="Serene Homestay evening view">
+      <img src="outsidephotos/69.jpeg" alt="Serene Homestay farmland">
+    </div>
+  </div>
+  <div class="marquee-row reverse">
+    <div class="marquee-track">
+      <img src="outsidephotos/18.jpg" alt="Serene Homestay outdoors">
+      <img src="outsidephotos/54.jpg" alt="Serene Homestay grounds">
+      <img src="roomphoto/101%20(2).jpg" alt="Room at Serene Homestay">
+      <img src="roomphoto/101.jpg" alt="Room at Serene Homestay">
+      <img src="roomphoto/102.jpg" alt="Room at Serene Homestay">
+      <img src="roomphoto/103%20(2).jpg" alt="Room at Serene Homestay">
+      <img src="roomphoto/103.jpg" alt="Room at Serene Homestay">
+      <img src="roomphoto/104.jpg" alt="Room at Serene Homestay">
+      <img src="roomphoto/105.jpeg" alt="Room at Serene Homestay">
+      <!-- duplicate set for seamless loop -->
+      <img src="outsidephotos/18.jpg" alt="Serene Homestay outdoors">
+      <img src="outsidephotos/54.jpg" alt="Serene Homestay grounds">
+      <img src="roomphoto/101%20(2).jpg" alt="Room at Serene Homestay">
+      <img src="roomphoto/101.jpg" alt="Room at Serene Homestay">
+      <img src="roomphoto/102.jpg" alt="Room at Serene Homestay">
+      <img src="roomphoto/103%20(2).jpg" alt="Room at Serene Homestay">
+      <img src="roomphoto/103.jpg" alt="Room at Serene Homestay">
+      <img src="roomphoto/104.jpg" alt="Room at Serene Homestay">
+      <img src="roomphoto/105.jpeg" alt="Room at Serene Homestay">
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-box">
+      <div class="about-copy">
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title">A Working Farm With Rooms for Guests</h2>
+        <p>Serene Homestay sits on farmland in Hirenasabi, a short drive from Badami's red sandstone hills. Whether you're here to explore the Chalukya-era temples nearby or simply do nothing at all, we keep the pace unhurried.</p>
+        <p>Every stay includes access to open fields and picnic seating. Bonfire evenings and meals are available as add-ons on request.</p>
+        <div class="stat-row">
+          <div><span>4.7★</span><small>Avg Rating</small></div>
+          <div><span>60+</span><small>Acres of Farmland</small></div>
+          <div><span>5</span><small>Rooms (4 Double + 1 Quad)</small></div>
+        </div>
+        <p class="quote">"We don't just offer a room — we offer a slower pace, with authentic North Karnataka food and a bonfire evening available on request."</p>
+      </div>
+      <div class="about-img">
+        <img src="main.jpg" alt="Serene Homestay grounds">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="rooms" id="rooms">
+  <div class="wrap">
+    <div class="rooms-head">
+      <span class="section-tag">Accommodation</span>
+      <h2 class="section-title">Comfortable Rooms for Every Traveller</h2>
+      <p class="section-sub" style="margin:0 auto;">Every room includes an attached bathroom, drinking water, and charging points — pick by size and book whichever way suits you.</p>
+    </div>
+    <div class="room-grid">
+      <div class="room-card">
+        <span class="room-badge">4 Rooms Available</span>
+        <h3>Double Bedroom</h3>
+        <ul>
+          <li>Double occupancy, attached bathroom</li>
+          <li>Hot &amp; cold water</li>
+          <li>Access to farm grounds &amp; picnic seating</li>
+          <li>Bonfire evening available (extra charge)</li>
+        </ul>
+        <div class="book-via">Book via</div>
+        <div class="book-links">
+          <a class="wa" href="https://wa.me/917338216616" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="bkg" href="https://www.booking.com/hotel/in/serene-homestay-hirenasabi.html" target="_blank" rel="noopener">Booking.com</a>
+          <a class="agoda" href="https://www.agoda.com/serene-home-stay/hotel/badami-in.html" target="_blank" rel="noopener">Agoda</a>
+          <a class="wego" href="https://www.wego.co.in/hotels/india/badami/serene-homestay-3733384" target="_blank" rel="noopener">Wego</a>
+        </div>
+      </div>
+      <div class="room-card">
+        <span class="room-badge">1 Room Available</span>
+        <h3>Quadruple Room</h3>
+        <ul>
+          <li>Sleeps up to 4, extra floor space</li>
+          <li>Attached bathroom</li>
+          <li>Ideal for families &amp; small groups</li>
+          <li>Bonfire evening available (extra charge)</li>
+        </ul>
+        <div class="book-via">Book via</div>
+        <div class="book-links">
+          <a class="wa" href="https://wa.me/917338216616" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="bkg" href="https://www.booking.com/hotel/in/serene-homestay-hirenasabi.html" target="_blank" rel="noopener">Booking.com</a>
+          <a class="agoda" href="https://www.agoda.com/serene-home-stay/hotel/badami-in.html" target="_blank" rel="noopener">Agoda</a>
+          <a class="wego" href="https://www.wego.co.in/hotels/india/badami/serene-homestay-3733384" target="_blank" rel="noopener">Wego</a>
+        </div>
+      </div>
+    </div>
+    <p class="pricing-line">Pricing varies by season and group size — <strong>message us on WhatsApp</strong> for the best direct rate.</p>
+  </div>
+</section>
+
+<section id="facilities">
+  <div class="wrap">
+    <div class="rooms-head">
+      <span class="section-tag">Facilities</span>
+      <h2 class="section-title">Everything You Need for a Perfect Stay</h2>
+    </div>
+    <div class="facilities-grid">
+      <div class="facility">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M6 6l12 12M18 6L6 18"/></svg>
+        <h3>Farm Living</h3>
+        <p>Open fields &amp; fresh air every morning.</p>
+      </div>
+      <div class="facility">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 4-2 5-2 8a2 2 0 0 0 4 0c2 2 2 6-2 10-4-4-4-8-2-10-2-1-2-4 2-8Z"/></svg>
+        <h3>Bonfire Evenings</h3>
+        <p>Warm fires under a starlit sky — available on request, extra charge.</p>
+      </div>
+      <div class="facility">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="15" r="4"/><circle cx="5" cy="8" r="2"/><circle cx="19" cy="8" r="2"/><circle cx="9" cy="4" r="1.6"/><circle cx="15" cy="4" r="1.6"/></svg>
+        <h3>Pet Friendly</h3>
+        <p>Your pets are welcome — we have a resident farm pet too.</p>
+      </div>
+      <div class="facility">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v6M11 3v6M7 6h4M15 3c-1.5 2-1.5 4 0 6v12"/></svg>
+        <h3>Authentic Karnataka Food</h3>
+        <p>North Karnataka breakfast &amp; dinner, on prior order only.</p>
+      </div>
+      <div class="facility">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M6 12V6a2 2 0 0 1 2-2h3v8M4 16h16l-1 4H5l-1-4Z"/></svg>
+        <h3>Clean Bathrooms</h3>
+        <p>Attached, with hot &amp; cold water.</p>
+      </div>
+      <div class="facility">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 12 6l7 6.5M6 11v8h12v-8"/></svg>
+        <h3>Free Parking</h3>
+        <p>Secure on-site parking for guests.</p>
+      </div>
+      <div class="facility">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+        <h3>Charging &amp; Wi-Fi Ready</h3>
+        <p>Charging points across the property.</p>
+      </div>
+      <div class="facility">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>
+        <h3>Space to Breathe</h3>
+        <p>Quiet, unhurried surroundings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="location" id="location">
+  <div class="wrap location-inner">
+    <div>
+      <span class="section-tag">Find Us</span>
+      <h2 class="section-title">Farmland Outside Badami</h2>
+      <p class="section-sub">Cholachguda Road, Hirenasabi, Badami Taluk, Bagalkot District, Karnataka – 587114. About 30 minutes by road from Badami town.</p>
+      <div class="location-map" style="margin-top:1.6rem;">
+        <iframe src="https://www.google.com/maps?q=15.8829684,75.7355743&z=17&output=embed" loading="lazy" allowfullscreen title="Serene Homestay location map"></iframe>
+      </div>
+    </div>
+    <div>
+      <span class="section-tag">Nearby Attractions</span>
+      <h2 class="section-title" style="font-size:1.6rem;">Worth the Short Drive</h2>
+      <div class="attraction-list">
+        <div class="attraction">
+          <span class="attraction-icon">🏛️</span>
+          <div><h4>Badami Cave Temples</h4><small>~11 km · 20 min drive</small><p>Red sandstone cave temples carved into the cliffs.</p></div>
+        </div>
+        <div class="attraction">
+          <span class="attraction-icon">🛕</span>
+          <div><h4>Pattadakal Monuments</h4><small>~15 km · 25 min drive</small><p>UNESCO Chalukya-era temple complex.</p></div>
+        </div>
+        <div class="attraction">
+          <span class="attraction-icon">⛩️</span>
+          <div><h4>Aihole Temples</h4><small>~25 km · 40 min drive</small><p>Village of hundreds of early temples on the Malaprabha river.</p></div>
+        </div>
+        <div class="attraction">
+          <span class="attraction-icon">🚉</span>
+          <div><h4>Badami Railway Station</h4><small>~11 km · 20 min drive</small><p>We can help arrange pickup from the station.</p></div>
+        </div>
+        <div class="attraction">
+          <span class="attraction-icon">✈️</span>
+          <div><h4>Hubli Airport</h4><small>~105 km · 2 hr drive</small><p>Nearest airport, roughly a two-hour drive away.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="rooms-head">
+      <span class="section-tag">Guest Reviews</span>
+      <h2 class="section-title">See What Guests Say on Google</h2>
+    </div>
+    <div class="google-reviews-card">
+      <div class="grc-left">
+        <svg viewBox="0 0 48 48" width="40" height="40"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.9 19 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4c-7.4 0-13.8 4.1-17.1 10.1z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.5-1.9 14.3-5.1l-6.6-5.6c-2 1.4-4.6 2.2-7.7 2.2-5.2 0-9.7-3.3-11.3-8l-6.6 5.1C9.9 39.6 16.4 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.2 4.3-4.1 5.7l6.6 5.6C41.9 36 44 30.5 44 24c0-1.3-.1-2.7-.4-3.5z"/></svg>
+        <div>
+          <div class="grc-rating">4.7 <span class="grc-stars">★★★★★</span></div>
+          <div class="grc-sub">Based on Google &amp; guest reviews</div>
+        </div>
+      </div>
+      <a class="grc-btn" href="https://www.google.com/search?q=Serene+Homestay+Hirenasabi+Badami+reviews" target="_blank" rel="noopener">Read Reviews on Google →</a>
+    </div>
+
+    <div class="review-cards">
+      <article class="review-article">
+        <div class="review-article-body">
+          <div class="review-avatar">P</div>
+          <div>
+            <h3><a href="https://www.google.com/search?q=Serene+Homestay+Hirenasabi+Badami+reviews" target="_blank" rel="noopener">Excellent farm stay experience</a></h3>
+            <p class="rtext">Rooms are neat and clean, the food is fresh and tasty, and the host was very helpful and kind. Had a wonderful stay here, highly recommended.</p>
+            <div class="review-meta">★★★★★ <small>Posted by Guest · Google</small></div>
+          </div>
+        </div>
+        <div class="review-badge-row">
+          <a class="review-badge" href="https://www.google.com/search?q=Serene+Homestay+Hirenasabi+Badami+reviews" target="_blank" rel="noopener">
+            <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.9 19 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4c-7.4 0-13.8 4.1-17.1 10.1z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.5-1.9 14.3-5.1l-6.6-5.6c-2 1.4-4.6 2.2-7.7 2.2-5.2 0-9.7-3.3-11.3-8l-6.6 5.1C9.9 39.6 16.4 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.2 4.3-4.1 5.7l6.6 5.6C41.9 36 44 30.5 44 24c0-1.3-.1-2.7-.4-3.5z"/></svg>
+            Google Review
+          </a>
+        </div>
+      </article>
+
+      <article class="review-article">
+        <div class="review-article-body">
+          <div class="review-avatar">G</div>
+          <div>
+            <h3><a href="https://www.google.com/search?q=Serene+Homestay+Hirenasabi+Badami+reviews" target="_blank" rel="noopener">Peaceful location near Badami</a></h3>
+            <p class="rtext">Excellent location amidst greenery and plantations, close to the historical caves and temples. Serene and peaceful atmosphere — great for a relaxing stay with family.</p>
+            <div class="review-meta">★★★★★ <small>Posted by Guest · Google</small></div>
+          </div>
+        </div>
+        <div class="review-badge-row">
+          <a class="review-badge" href="https://www.google.com/search?q=Serene+Homestay+Hirenasabi+Badami+reviews" target="_blank" rel="noopener">
+            <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.9 19 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4c-7.4 0-13.8 4.1-17.1 10.1z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.5-1.9 14.3-5.1l-6.6-5.6c-2 1.4-4.6 2.2-7.7 2.2-5.2 0-9.7-3.3-11.3-8l-6.6 5.1C9.9 39.6 16.4 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.2 4.3-4.1 5.7l6.6 5.6C41.9 36 44 30.5 44 24c0-1.3-.1-2.7-.4-3.5z"/></svg>
+            Google Review
+          </a>
+        </div>
+      </article>
+
+      <article class="review-article">
+        <div class="review-article-body">
+          <div class="review-avatar">S</div>
+          <div>
+            <h3><a href="https://www.google.com/search?q=Serene+Homestay+Hirenasabi+Badami+reviews" target="_blank" rel="noopener">Great value, friendly hosts</a></h3>
+            <p class="rtext">Calm and beautiful location at an affordable price. Well maintained property with friendly staff, and the food was delicious. Good roads to reach the location too.</p>
+            <div class="review-meta">★★★★☆ <small>Posted by Guest · Google</small></div>
+          </div>
+        </div>
+        <div class="review-badge-row">
+          <a class="review-badge" href="https://www.google.com/search?q=Serene+Homestay+Hirenasabi+Badami+reviews" target="_blank" rel="noopener">
+            <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.9 19 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4c-7.4 0-13.8 4.1-17.1 10.1z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.5-1.9 14.3-5.1l-6.6-5.6c-2 1.4-4.6 2.2-7.7 2.2-5.2 0-9.7-3.3-11.3-8l-6.6 5.1C9.9 39.6 16.4 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.2 4.3-4.1 5.7l6.6 5.6C41.9 36 44 30.5 44 24c0-1.3-.1-2.7-.4-3.5z"/></svg>
+            Google Review
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="rooms-head">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-q">What are the check-in and check-out times? <span class="icon">+</span></button>
+        <div class="faq-a"><p>Check-in is from 12:00 AM. Check-out is by 10:00 AM.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is food included? <span class="icon">+</span></button>
+        <div class="faq-a"><p>Breakfast and dinner are available, but only on prior order. We serve authentic North Karnataka cuisine.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How far is Serene Homestay from Badami town? <span class="icon">+</span></button>
+        <div class="faq-a"><p>About 11 km, roughly a 20-minute drive. We're also close to Pattadakal and Aihole for day trips.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Are pets allowed? <span class="icon">+</span></button>
+        <div class="faq-a"><p>Yes — Serene Homestay is pet-friendly. We also have our own resident pet on the farm, so just let us know in advance if that matters for your visit.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is direct booking available? <span class="icon">+</span></button>
+        <div class="faq-a"><p>Yes — message us on WhatsApp or call directly for the best rate. We're also listed on Booking.com, Agoda, and Wego.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-inner">
+    <div class="contact-info">
+      <span class="section-tag">Get in Touch</span>
+      <h2 class="section-title">Ready to Book Your Stay?</h2>
+      <p class="section-sub">Reach out directly for the best rates and personalised help — we reply personally, usually fastest on WhatsApp.</p>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><h4>Address</h4><span>Cholachguda Road, Hirenasabi, Badami Taluk, Bagalkot – 587114, Karnataka</span></div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div><h4>Phone</h4><a href="tel:+917338216616">+91 73382 16616</a></div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <div><h4>WhatsApp</h4><a href="https://wa.me/917338216616" target="_blank" rel="noopener">Chat with us →</a></div>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+        <div><h4>Instagram</h4><a href="https://www.instagram.com/serenehomestay/" target="_blank" rel="noopener">@serenehomestay</a></div>
+      </div>
+      <div class="platform-row">
+        <a class="wa" href="https://wa.me/917338216616" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="bkg" href="https://www.booking.com/hotel/in/serene-homestay-hirenasabi.html" target="_blank" rel="noopener">Booking.com</a>
+        <a class="agoda" href="https://www.agoda.com/serene-home-stay/hotel/badami-in.html" target="_blank" rel="noopener">Agoda</a>
+        <a class="wego" href="https://www.wego.co.in/hotels/india/badami/serene-homestay-3733384" target="_blank" rel="noopener">Wego</a>
+      </div>
+    </div>
+    <form onsubmit="return sendEnquiry(event)">
+      <div class="form-row">
+        <div><label for="name">Your Name</label><input id="name" type="text" placeholder="Full name" required></div>
+        <div><label for="phone">Phone / WhatsApp</label><input id="phone" type="tel" placeholder="+91" required></div>
+      </div>
+      <div class="form-row">
+        <div><label for="checkin">Check-in Date</label><input id="checkin" type="date"></div>
+        <div><label for="checkout">Check-out Date</label><input id="checkout" type="date"></div>
+      </div>
+      <div>
+        <label for="room">Room Type</label>
+        <select id="room">
+          <option>Double Bedroom</option>
+          <option>Quadruple Room</option>
+        </select>
+      </div>
+      <div><label for="message">Message</label><textarea id="message" placeholder="Group size, dietary needs, anything else"></textarea></div>
+      <button class="btn btn-solid" type="submit" style="align-self:flex-start; border:none; cursor:pointer;">Send Enquiry →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="brand" style="justify-content:center;"><img src="/logo.jpg" alt="Serene Homestay logo" style="width:28px;height:28px;border-radius:50%;object-fit:cover;"><span style="color:var(--accent);">Serene</span>&nbsp;Homestay</a>
+    <div class="foot-links">
+      <a href="#about">About</a><a href="#rooms">Rooms</a><a href="#location">Location</a><a href="#contact">Contact</a>
+    </div>
+    <p>Hirenasabi, Badami, Karnataka · © 2026 Serene Homestay · All Rights Reserved</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var slides = document.querySelectorAll('#roomSlideshow img');
+    var current = 0;
+    if(slides.length > 1){
+      setInterval(function(){
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 3000);
+    }
+  })();
+
+  document.getElementById('navtoggle').addEventListener('click', function(){
+    document.getElementById('mobilenav').classList.toggle('open');
+  });
+  document.querySelectorAll('.mobilenav a').forEach(function(a){
+    a.addEventListener('click', function(){ document.getElementById('mobilenav').classList.remove('open'); });
+  });
+
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement;
+      var answer = item.querySelector('.faq-a');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  function sendEnquiry(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value;
+    var phone = document.getElementById('phone').value;
+    var checkin = document.getElementById('checkin').value;
+    var checkout = document.getElementById('checkout').value;
+    var room = document.getElementById('room').value;
+    var message = document.getElementById('message').value;
+    var text = "Hi! I'd like to enquire about Serene Homestay.%0A" +
+      "Name: " + encodeURIComponent(name) + "%0A" +
+      "Phone: " + encodeURIComponent(phone) + "%0A" +
+      "Check-in: " + encodeURIComponent(checkin) + "%0A" +
+      "Check-out: " + encodeURIComponent(checkout) + "%0A" +
+      "Room: " + encodeURIComponent(room) + "%0A" +
+      "Message: " + encodeURIComponent(message);
+    window.open("https://wa.me/917338216616?text=" + text, "_blank");
+    return false;
+  }
+</script>
+
+</body>
+</html>
